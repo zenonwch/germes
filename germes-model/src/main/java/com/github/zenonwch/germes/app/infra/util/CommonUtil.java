@@ -1,6 +1,7 @@
 package com.github.zenonwch.germes.app.infra.util;
 
 import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -21,5 +22,15 @@ public final class CommonUtil {
     public static <T> Set<T> getSafeSet(final Set<T> src) {
         //noinspection NestedMethodCall
         return Collections.unmodifiableSet(Optional.ofNullable(src).orElse(Collections.emptySet()));
+    }
+
+    /**
+     * Returns not-null unmodifiable copy of the source list
+     * @param src .
+     * @return Unmodifiable List<T>
+     */
+    public static <T> List<T> getSafeList(final List<T> src) {
+        //noinspection NestedMethodCall
+        return Collections.unmodifiableList(Optional.ofNullable(src).orElse(Collections.emptyList()));
     }
 }
