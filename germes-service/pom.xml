@@ -7,7 +7,7 @@
     <parent>
         <artifactId>germes</artifactId>
         <groupId>com.github.zenonwch</groupId>
-        <version>0.0.6</version>
+        <version>0.0.7</version>
     </parent>
 
     <artifactId>germes-service</artifactId>
@@ -28,7 +28,7 @@
         <dependency>
             <groupId>com.github.zenonwch</groupId>
             <artifactId>germes-model</artifactId>
-            <version>0.0.6</version>
+            <version>${project.parent.version}</version>
         </dependency>
 
         <!-- web-server for jersey -->
