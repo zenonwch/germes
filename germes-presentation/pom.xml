@@ -7,19 +7,37 @@
     <parent>
         <artifactId>germes</artifactId>
         <groupId>com.github.zenonwch</groupId>
-        <version>0.0.7</version>
+        <version>0.0.8</version>
     </parent>
 
     <artifactId>germes-presentation</artifactId>
     <packaging>war</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.zenonwch</groupId>
+            <artifactId>germes-service</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
+                <version>2.6</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <path>/</path>
                 </configuration>
             </plugin>
         </plugins>

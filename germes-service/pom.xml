@@ -7,7 +7,7 @@
     <parent>
         <artifactId>germes</artifactId>
         <groupId>com.github.zenonwch</groupId>
-        <version>0.0.7</version>
+        <version>0.0.8</version>
     </parent>
 
     <artifactId>germes-service</artifactId>
@@ -35,7 +35,22 @@
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
             <artifactId>jersey-container-grizzly2-http</artifactId>
-            <version>${jersey.version}</version>
+            <!-- No need to specify version because version is specified in dependencyManagement section for jersey-bom artifact -->
+        </dependency>
+        <!-- Jersey REST servlet -->
+        <dependency>
+            <groupId>org.glassfish.jersey.containers</groupId>
+            <artifactId>jersey-container-servlet</artifactId>
+        </dependency>
+        <!-- https://stackoverflow.com/a/46405129/5917460 -->
+        <dependency>
+            <groupId>org.glassfish.jersey.inject</groupId>
+            <artifactId>jersey-hk2</artifactId>
+        </dependency>
+        <!-- Jackson -->
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-json-jackson</artifactId>
         </dependency>
     </dependencies>
 </project>
